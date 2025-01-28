@@ -27,8 +27,17 @@ namespace ServiceLocator.Player
             ResetAttackTimer();
         }
 
+
         public void SetPosition(Vector3 positionToSet) => monkeyView.transform.position = positionToSet;
 
+        public void UpdateMonkey()
+        {
+            if (bloonsInRange.Count > 0)
+            {
+                RotateTowardsTarget(bloonsInRange[0]);
+                ShootAtTarget(bloonsInRange[0]);
+            }
+        }
         public void BloonEnteredRange(BloonController bloon)
         {
             if (CanAttackBloon(bloon.GetBloonType()))
