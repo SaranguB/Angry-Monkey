@@ -12,7 +12,7 @@ namespace ServiceLocator.Wave
 {
     public class WaveService : GenericMonoSingelton<WaveService>
     {
-        [SerializeField] private EventService eventService;
+        //[SerializeField] private EventService eventService;
         
        
         
@@ -37,7 +37,7 @@ namespace ServiceLocator.Wave
             activeBloons = new List<BloonController>();
         }
 
-        private void SubscribeToEvents() => eventService.OnMapSelected.AddListener(LoadWaveDataForMap);
+        private void SubscribeToEvents() => EventService.Instance.OnMapSelected.AddListener(LoadWaveDataForMap);
 
         private void LoadWaveDataForMap(int mapId)
         {
