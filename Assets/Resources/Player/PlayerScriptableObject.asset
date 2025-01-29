@@ -17,7 +17,7 @@ MonoBehaviour:
   MonkeyScriptableObjects:
   - {fileID: 11400000, guid: f8fc1658394cf7748917d02dda45e571, type: 2}
   - {fileID: 11400000, guid: 985119dc65978224ba5759bf6c1cb6aa, type: 2}
-  - {fileID: 11400000, guid: 4e36024359151174bb7ebcd801abd128, type: 2}
+  - {fileID: 11400000, guid: e15783f9ed633df4d91d7b3e5e98da53, type: 2}
   ProjectileScriptableObjects:
   - {fileID: 11400000, guid: e340dda60fff3ef448ee486910a3234a, type: 2}
   - {fileID: 11400000, guid: ffbcdc01c3e2c6643b339f98c899c9b0, type: 2}
