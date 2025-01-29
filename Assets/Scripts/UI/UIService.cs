@@ -14,6 +14,7 @@ namespace ServiceLocator.UI
         // Dependencies:
         private WaveService waveService;
         private EventService eventService;
+        private PlayerService playerService;
 
         [Header("Gameplay Panel")]
         [SerializeField] private GameObject gameplayPanel;
@@ -54,6 +55,7 @@ namespace ServiceLocator.UI
         {
             this.waveService = waveService;
             this.eventService = eventService;
+            this.playerService = playerService;
 
             InitializeMapSelectionUI(eventService);
             InitializeMonkeySelectionUI(playerService);
@@ -63,6 +65,11 @@ namespace ServiceLocator.UI
         private void InitializeMapSelectionUI(EventService eventService)
         {
             levelSelectionPanel.SetActive(true);
+
+            foreach (MapButton mapButton in mapButtons)
+            {
+                mapButton.Init(eventService);
+            }
             
         }
 

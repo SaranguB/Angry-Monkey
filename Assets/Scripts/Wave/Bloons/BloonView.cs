@@ -4,8 +4,8 @@ namespace ServiceLocator.Wave.Bloon
 {
     public class BloonView : MonoBehaviour
     {
-        public BloonController Controller { get ; set ; }
-        
+        public BloonController Controller { get; set; }
+
         private SpriteRenderer spriteRenderer;
         private Animator animator;
 
@@ -17,8 +17,11 @@ namespace ServiceLocator.Wave.Bloon
 
         private void Update() => Controller.FollowWayPoints();
 
-        public void SetRenderer(Sprite spriteToSet) => spriteRenderer.sprite = spriteToSet;
-
+        public void SetRenderer(Sprite spriteToSet)
+        {
+            if (spriteRenderer != null)
+                spriteRenderer.sprite = spriteToSet;
+        }
         public void SetSortingOrder(int sortingOrder) => spriteRenderer.sortingOrder = sortingOrder;
 
         public void PopBloon()
