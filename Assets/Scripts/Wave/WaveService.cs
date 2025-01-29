@@ -21,7 +21,7 @@ namespace ServiceLocator.Wave
         private SoundService soundService;
         private EventService eventService;
         private PlayerService playerService;
-        private WaveService waveService;
+        
 
         private int currentWaveId;
         private List<WaveData> waveDatas;
@@ -34,21 +34,21 @@ namespace ServiceLocator.Wave
         }
 
         public void Init(EventService eventService, UIService uiService, 
-            MapService mapService, SoundService soundService, PlayerService playerService, WaveService waveService)
+            MapService mapService, SoundService soundService, PlayerService playerService)
         {
             this.playerService = playerService;
             this.eventService = eventService;
             this.uiService = uiService;
             this.mapService = mapService;
             this.soundService = soundService;
-            this.waveService = waveService;
+            
 
             InitializeBloons();
             SubscribeToEvents();
         }
         private void InitializeBloons()
         {
-            bloonPool = new BloonPool(waveService, soundService, playerService, waveScriptableObject);
+            bloonPool = new BloonPool(this, soundService, playerService, waveScriptableObject);
             activeBloons = new List<BloonController>();
         }
 
